@@ -9,9 +9,10 @@ Run the following to install:
 $ pip install helloworld
 ```
 
-## Usage 
+## Usage
+
 ```python
-from helloworld import say_hello
+from pipeline_tools import say_hello
 
 # Generate "Hello World!
 say_hello()

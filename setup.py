@@ -4,11 +4,11 @@ from setuptools import setup
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(name='pipeline-tools',
+setup(name='pipeline_tools',
       version='0.0.1',
       description='ML pipeline tools',
-      py_modules=['pipeline-tools'],
-      package_dir={'': 'src'},
+      py_modules=['pipeline_tools'],
+      package_dir={'': 'pipeline_tools'},
       classifiers=[
           "Programming Language :: Python :: 3",
           "Programming Language :: Python :: 3.6",
