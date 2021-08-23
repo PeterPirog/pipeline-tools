@@ -1,2 +1,3 @@
-include *.py
-recursive-include src *.py
+include tox.ini
+recursive-include pipeline_tools *.py
+recursive-include tests *.py
