@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(name='pipeline-tools',
       version='0.0.1',
-      description='Say hello',
+      description='ML pipeline tools',
       py_modules=['pipeline-tools'],
       package_dir={'': 'src'},
       classifiers=[
@@ -20,17 +20,17 @@ setup(name='pipeline-tools',
       long_description=long_description,
       long_description_content_type="text/markdown",
       install_requires=[
-          "pandas",
+          "pandas>=1.3.2",
       ],
       extras_require={
           "dev": [
               "pytest>=3.7",
-              "tox",
+              "tox>=3.24.3",
               "check-manifest",
               "twine"
           ],
       },
-      url="https://github.com/PeterPirog/MLTools",
-      author="Peter Pirog",
-      author_email="peterpirogtf@gmail.com",
+      url='https://github.com/PeterPirog/pipeline-tools',
+      author='Peter Pirog',
+      author_email='peterpirogtf@gmail.com',
       )
