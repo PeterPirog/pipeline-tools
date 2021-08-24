@@ -1,15 +1,21 @@
 import pandas as pd
-from load_df import load_train_df,load_test_df
+#from load_df import load_train_df,load_test_df
 import pytest
 
+#DATAFRAMES
+    #Loaded raw train dataframe form csv file
 @pytest.fixture
 def df_train():
-    return load_train_df()
+    df = pd.read_csv('./tests/data/train.csv')
+    return df
 
+    #Loaded raw test dataframe form csv file
 @pytest.fixture
 def df_test():
-    return load_test_df()
+    df=pd.read_csv('./tests/data/test.csv')
+    return df
 
+# COLUMNS AND FEATURES
 @pytest.fixture
 def train_columns():
     columns= ['Id', 'MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street',
@@ -51,6 +57,28 @@ def test_columns():
            'Fence', 'MiscFeature', 'MiscVal', 'MoSold', 'YrSold', 'SaleType',
            'SaleCondition']
     return columns
+
+@pytest.fixture
+def target_column():
+    return 'SalePrice'
+
+@pytest.fixture
+def selected_columns():
+    return ['BldgType', 'GrLivArea', 'MSSubClass', 'OverallQual']
+
+
+# X, y test and train
+@pytest.fixture
+def X_train(df_train,selected_columns):
+    return df_train[selected_columns]
+
+@pytest.fixture
+def X_test(df_test,selected_columns):
+    return df_test[selected_columns]
+
+@pytest.fixture
+def y_train(df_train,target_column):
+    return df_train[target_column]
 
 @pytest.fixture
 def test_maximums(df_test):
